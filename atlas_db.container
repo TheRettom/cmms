@@ -1,0 +1,9 @@
+[Container]
+ContainerName=atlas_db
+Image=postgres:16-alpine
+Pod=atlas-cmms.pod
+Secret=CMMS_DB_USER,type=env,target=POSTGRES_USER
+Secret=CMMS_DB_PWD,type=env,target=POSTGRES_PASSWORD
+Environment=TZ=America/Boise
+Environment=POSTGRES_DB=atlas
+Volume=%h/.config/containers/storage/atlas-cmms/postgres_data:/var/lib/postgresql/data
