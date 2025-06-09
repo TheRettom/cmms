@@ -1,0 +1,4 @@
+[Pod]
+PodName=atlas-cmms
+Network=atlas-cmms.network
+IP=10.89.5.21
