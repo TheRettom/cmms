@@ -1,0 +1,9 @@
+[Container]
+ContainerName=atlas_minio
+Image=minio/minio:RELEASE.2025-04-22T22-12-26Z
+Pod=atlas-cmms.pod
+Secret=CMMS_MINIO_USER,type=env,target=MINIO_ROOT_USER
+Secret=CMMS_MINIO_PASSWORD,type=env,target=MINIO_ROOT_PASSWORD
+Environment=TZ=America/Boise
+Volume=%h/.config/containers/storage/atlas-cmms/minio_data:/data
+Exec=server --address ":9000" --console-address ":9001" /data
